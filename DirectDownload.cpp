@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
-#include <thread>
 #include "directdownload.h"
 #define MAX_LINE 512
 
