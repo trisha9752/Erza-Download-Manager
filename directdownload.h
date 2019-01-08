@@ -13,7 +13,8 @@ class Direct {
 	public: static long double convertMBToGB(long double MB) {
 		return MB / 1024;
 	}
-			
+	
+	// use this in thread to get the current downloaded percentage.
 	public: static int percentDownload(const char* filename ,double real_file_size ){
 		std::ifstream in(filename, std::ios::binary | std::ios::ate);
 		double current_file_size = (double) in.tellg();
