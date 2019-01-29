@@ -24,4 +24,11 @@ class Endeavour {
 				return true;
 
 			}
+	public:bool stringFind(std::string mainstring, std::string substring){
+	if(strstr(mainstring.c_str(),substring.c_str())){
+		return true;
+	}
+	else
+		return false;
+}
 };
