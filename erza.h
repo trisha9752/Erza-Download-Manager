@@ -40,14 +40,10 @@ class Erza :public Endeavour {
 		if (curl) {
 			fp = fopen(path, "wb");
 			curl_easy_setopt(curl, CURLOPT_URL, url);
-			/* Setup the https:// verification options - note we do this on all requests as there may
-			   be a redirect from http to https and we still want to verify */
-			   //curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1);
 			curl_easy_setopt(curl, CURLOPT_CAINFO, "./ca-bundle.crt");
 			curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false);
 			curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, false);
 			curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, readHeader);
-			//curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 0);
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
 			res = curl_easy_perform(curl);
 			curl_easy_cleanup(curl);
@@ -71,7 +67,6 @@ size_t readHeader(char* header, size_t size, size_t nitems, void *userdata) {
 	else if (oprations.startsWith(header, "Content-Type:")) {
 
 	}
-	//printf("%.*s\n", numbytes, b);
 	return size * nitems;
 }
 
