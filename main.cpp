@@ -8,5 +8,6 @@ int main() {
 	const char* url = "https://stackoverflow.com/questions/1750055/with-php-curl-get-filename-from-file-header";
 	char path[FILENAME_MAX] = "./json.zip";
 	bool error = downloader->download(url, path);
+	std::cout << downloader->file_size;
 	return 0;
 }
